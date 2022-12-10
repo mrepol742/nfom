@@ -1,0 +1,242 @@
+
+        @import url("https://fonts.googleapis.com/css?family=Economica:700&display=swap");
+
+        * {
+            box-sizing: border-box;
+            /* 	color:red; */
+        }
+
+        body {
+            font-family: "Economica", sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            min-height: 100vh;
+            background-color: black;
+            color: orchid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrapper {
+            width: 546px;
+            height: 500px;
+            position: relative;
+        }
+
+        .line1 .word,
+        .line2 .char {
+            offset-path: path("M.5 159.7C-.9 341.1 228.4 500 273.2 500.5S546.1 350.1 546 159.7c0-75.9-32.9-131.6-97.2-149.8-116.5-33.1-153.6 48.4-175.6 47.8-24.2-.6-66.9-80.5-172.7-50C33.1 27.1 1.1 82 .5 159.7z"
+                );
+            offset-position: top;
+            offset-anchor: center left;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .line1 .word {
+            --i: calc(var(--word-total) - var(--word-index));
+            offset-distance: calc(var(--i) * 4.2rem + 37rem);
+            offset-rotate: auto 90deg;
+            opacity: 0;
+            animation: words 900ms calc(var(--word-index) * 320ms + 2300ms) cubic-bezier(0.43, 0.13, 0.29, 0.69) forwards;
+        }
+
+        .line2 .char {
+            --i: calc(var(--char-total) - var(--char-index));
+            offset-distance: calc(var(--char-index) * 1% + 64rem);
+            opacity: 0;
+            animation: dots 200ms calc(var(--i) * 30ms) forwards;
+        }
+
+        @keyframes dots {
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes words {
+            100% {
+                opacity: 1;
+                offset-distance: calc(var(--i) * 4.2rem + 36rem);
+            }
+        }
+
+        .buttons {
+            width: 160px;
+            height: 70px;
+            font-family: cursive;
+            font-size: 25px;
+            position: absolute;
+            border: 2px solid #f2c2c8;
+            border-radius: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        #button {
+            background: linear-gradient(70deg, #ffe5e9, #ffc3cc);
+            color: #f05757;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -40px;
+            margin-left: -105px;
+            outline: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        #heart1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -150px;
+            background-color: #ffdae0;
+            height: 50px;
+            width: 50px;
+            opacity: 0;
+        }
+
+        #heart2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -90px;
+            margin-left: -50px;
+            background-color: #ffdae0;
+            height: 50px;
+            width: 50px;
+            opacity: 0;
+        }
+
+        #heart3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: 50px;
+            margin-left: -50px;
+            background-color: #ffdae0;
+            height: 50px;
+            width: 50px;
+            opacity: 0;
+        }
+
+        #heart4 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -60px;
+            margin-left: 70px;
+            background-color: #ffdae0;
+            height: 50px;
+            width: 50px;
+            opacity: 0;
+        }
+
+        #heart5 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: 25px;
+            margin-left: 60px;
+            background-color: #ffdae0;
+            height: 50px;
+            width: 50px;
+            opacity: 0;
+        }
+
+        .hearts:after {
+            background-color: #ffdae0;
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 0px;
+            left: 25px;
+        }
+
+        .hearts:before {
+            background-color: #ffdae0;
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 0px;
+        }
+
+        .love:hover>#heart1 {
+            animation-name: hearts1;
+            animation-duration: 1.1s;
+            animation-iteration-count: infinite;
+        }
+
+        .love:hover>#heart2 {
+            animation-name: hearts2;
+            animation-duration: 0.9s;
+            animation-iteration-count: infinite;
+        }
+
+        .love:hover>#heart3 {
+            animation-name: hearts3;
+            animation-duration: 0.9s;
+            animation-iteration-count: infinite;
+        }
+
+        .love:hover>#heart4 {
+            animation-name: hearts4;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        .love:hover>#heart5 {
+            animation-name: hearts5;
+            animation-duration: 1.1s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes hearts1 {
+            0% {
+                transform: scale(0.1, 0.1) rotate(-45deg);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes hearts2 {
+            20% {
+                transform: scale(0.2, 0.2) rotate(-45deg);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes hearts3 {
+            40% {
+                transform: scale(0.3, 0.3) rotate(-45deg);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes hearts4 {
+            60% {
+                transform: scale(0.4, 0.4) rotate(-45deg);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes hearts5 {
+            80% {
+                transform: scale(0.6, 0.6) rotate(-45deg);
+                opacity: 0.8;
+            }
+        }
+
+        #button:active {
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.23);
+            transform: scale(0.99);
+        }
